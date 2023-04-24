@@ -108,7 +108,7 @@ export default function Products({ products }) {
     })
       .then((res) => res.json())
       .then((data) => {
-        const InitialCart = data !== 0
+        const InitialCart = data.length !== 0
           ? data
           : [{ idCommande: 0, idUtilisateur: cookies?.user?.idUtilisateur }];
         setCartItems(InitialCart[0]);
